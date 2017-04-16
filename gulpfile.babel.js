@@ -47,11 +47,18 @@ gulp.task('build:lib', () => {
 			})
 		]
 	}).then(bundle => {
-		return bundle.write({
-			format: 'iife',
-			moduleName: 'PolymerRedux',
-			dest: 'lib/index.js'
-		});
+		return Promise.all([
+			bundle.write({
+				format: 'iife',
+				moduleName: 'PolymerRedux',
+				dest: 'lib/index.js'
+			}),
+			bundle.write({
+				format: 'es',
+				moduleName: 'PolymerRedux',
+				dest: 'es/index.js'
+			})
+		]);
 	});
 });
 
