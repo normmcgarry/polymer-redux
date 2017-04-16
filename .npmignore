@@ -1,7 +1,6 @@
 bower_components
 coverage
 test
-.babelrc
 .editorconfig
 .gitignore
 .npmignore
